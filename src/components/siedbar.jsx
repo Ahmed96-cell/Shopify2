@@ -141,21 +141,24 @@ function NavigationExample() {
               url: "#",
 
               label: "Orders",
+              selected: isopen1,
               icon: OrdersMinor,
-
-              subNavigationItems: [
-                {
-                  url: location,
-                  disabled: false,
-                  label: "Drafts",
-                },
-                {
-                  url: "#",
-                  excludePaths: ["#"],
-                  disabled: false,
-                  label: "Abandoned checkouts",
-                },
-              ],
+              onClick: opens1,
+              subNavigationItems: isopen1
+                ? [
+                    {
+                      url: location,
+                      disabled: false,
+                      label: "Drafts",
+                    },
+                    {
+                      url: "#",
+                      excludePaths: ["#"],
+                      disabled: false,
+                      label: "Abandoned checkouts",
+                    },
+                  ]
+                : [],
             },
 
             {
@@ -163,50 +166,58 @@ function NavigationExample() {
 
               label: "Product",
               icon: ProductsMajor,
-              subNavigationItems: [
-                {
-                  url: location,
-                  disabled: false,
-                  label: "Collections",
-                },
-                {
-                  url: "#",
-                  excludePaths: ["#"],
-                  disabled: false,
-                  label: "Inventory",
-                },
-                {
-                  url: "#",
-                  excludePaths: ["#"],
-                  disabled: false,
-                  label: "Purchase orders",
-                },
-                {
-                  url: "#",
-                  excludePaths: ["#"],
-                  disabled: false,
-                  label: "Transfers",
-                },
-                {
-                  url: "#",
-                  excludePaths: ["#"],
-                  disabled: false,
-                  label: "Gift cards",
-                },
-              ],
+              selected: isopen2,
+              onClick: opens2,
+              subNavigationItems: isopen2
+                ? [
+                    {
+                      url: location,
+                      disabled: false,
+                      label: "Collections",
+                    },
+                    {
+                      url: "#",
+                      excludePaths: ["#"],
+                      disabled: false,
+                      label: "Inventory",
+                    },
+                    {
+                      url: "#",
+                      excludePaths: ["#"],
+                      disabled: false,
+                      label: "Purchase orders",
+                    },
+                    {
+                      url: "#",
+                      excludePaths: ["#"],
+                      disabled: false,
+                      label: "Transfers",
+                    },
+                    {
+                      url: "#",
+                      excludePaths: ["#"],
+                      disabled: false,
+                      label: "Gift cards",
+                    },
+                  ]
+                : [],
             },
             {
               url: "#",
               label: "Customers",
 
               icon: CustomersMajor,
-              subNavigationItems: [
-                {
-                  url: location,
-                  // disabled: false,
-                  label: "segments",
-                },
-              ],
+              selected: isopen3,
+              onClick: opens3,
+              subNavigationItems: isopen3
+                ? [
+                    {
+                      url: location,
+                      // disabled: false,
+                      label: "segments",
+                    },
+                  ]
+                : [],
             },
             {
               url: "#",
@@ -214,55 +225,66 @@ function NavigationExample() {
               label: "Content",
               // badge: "Old",
               icon: ContentMinor,
-              subNavigationItems: [
-                {
-                  url: location,
-                  // disabled: false,
-                  label: "Metaobjects",
-                },
-                {
-                  url: location,
-                  // disabled: false,
-                  label: "Files",
-                },
-              ],
+              selected: isopen4,
+              onClick: opens4,
+              subNavigationItems: isopen4
+                ? [
+                    {
+                      url: location,
+                      // disabled: false,
+                      label: "Metaobjects",
+                    },
+                    {
+                      url: location,
+                      // disabled: false,
+                      label: "Files",
+                    },
+                  ]
+                : [],
             },
             {
               url: "#",
               label: "Analytics",
               icon: AnalyticsMinor,
-              selected: true,
-              subNavigationItems: [
-                {
-                  url: location,
-                  // disabled: false,
-                  label: "Reports",
-                },
-                {
-                  url: location,
-                  // disabled: false,
-                  label: "Live View",
-                },
-              ],
+
+              selected: isopen5,
+              onClick: opens5,
+              subNavigationItems: isopen5
+                ? [
+                    {
+                      url: location,
+                      // disabled: false,
+                      label: "Reports",
+                    },
+                    {
+                      url: location,
+                      // disabled: false,
+                      label: "Live View",
+                    },
+                  ]
+                : [],
             },
 
             {
               url: location,
               label: "Marketing",
               icon: MarketingMajor,
-              selected: true,
-              subNavigationItems: [
-                {
-                  url: location,
-                  // disabled: false,
-                  label: "Campaigns",
-                },
-                {
-                  url: location,
-                  // disabled: false,
-                  label: "Automations",
-                },
-              ],
+              selected: isopen6,
+              onClick: opens6,
+              subNavigationItems: isopen6
+                ? [
+                    {
+                      url: location,
+                      // disabled: false,
+                      label: "Campaigns",
+                    },
+                    {
+                      url: location,
+                      // disabled: false,
+                      label: "Automations",
+                    },
+                  ]
+                : [],
               // subNavigationItems: [
               //   {
               //     url: location,

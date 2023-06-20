@@ -44,12 +44,13 @@ function Topbar() {
     <TopBar.UserMenu
       actions={[
         {
-          items: [{ content: "Back to Shopify", icon: ArrowLeftMinor }],
+          items: [{ content: "Mohamed shoman", icon: ArrowLeftMinor }],
         },
         {
           items: [{ content: "Community forums" }],
         },
       ]}
+      shape="round"
       initials="AY"
       name="Ahmed yahia"
       open={isUserMenuOpen}
@@ -79,18 +80,10 @@ function Topbar() {
     <TopBar.Menu
       activatorContent={
         <div className="d-flex">
-          <div>
-            <Icon source={NotificationMajor} />
-            <Text as="span" visuallyHidden>
-              Secondary menu
-            </Text>
-          </div>
-          <div>
-            <Icon source={FlagMajor} />
-            <Text as="span" visuallyHidden>
-              Secondary menu
-            </Text>
-          </div>
+          <Icon source={NotificationMajor} />
+          <Text as="span" visuallyHidden>
+            Secondary menu
+          </Text>
         </div>
       }
       open={isSecondaryMenuOpen}
