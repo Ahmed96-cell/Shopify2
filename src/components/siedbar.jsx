@@ -44,8 +44,10 @@ import {
   CustomersMinor,
   MarketingMinor,
   OnlineStoreMinor,
+  PlusMinor,
   ViewMinor,
 } from "@shopify/polaris-icons";
+import { FaShopify } from "react-icons/fa";
 import React, { useState } from "react";
 import {
   ProductsMajor,
@@ -71,6 +73,8 @@ function NavigationExample() {
   const [isopen5, setisopen5] = useState(false);
 
   const [isopen6, setisopen6] = useState(false);
+  const [isopen7, setisopen7] = useState(false);
+  const [isopen8, setisopen8] = useState(false);
 
   const opens1 = () => {
     setisopen1(!isopen1);
@@ -79,6 +83,8 @@ function NavigationExample() {
     setisopen5(false);
     setisopen6(false);
     setisopen4(false);
+    setisopen7(false);
+    setisopen8(false);
   };
 
   const opens2 = () => {
@@ -88,6 +94,8 @@ function NavigationExample() {
     setisopen5(false);
     setisopen6(false);
     setisopen4(false);
+    setisopen7(false);
+    setisopen8(false);
   };
 
   const opens3 = () => {
@@ -97,6 +105,8 @@ function NavigationExample() {
     setisopen4(false);
     setisopen5(false);
     setisopen6(false);
+    setisopen7(false);
+    setisopen8(false);
   };
 
   const opens4 = () => {
@@ -106,6 +116,8 @@ function NavigationExample() {
     setisopen4(!isopen4);
     setisopen5(false);
     setisopen6(false);
+    setisopen7(false);
+    setisopen8(false);
   };
 
   const opens5 = () => {
@@ -115,6 +127,8 @@ function NavigationExample() {
     setisopen4(false);
     setisopen5(!isopen5);
     setisopen6(false);
+    setisopen7(false);
+    setisopen8(false);
   };
 
   const opens6 = () => {
@@ -124,6 +138,28 @@ function NavigationExample() {
     setisopen4(false);
     setisopen5(false);
     setisopen6(!isopen6);
+    setisopen7(false);
+    setisopen8(false);
+  };
+  const opens7 = () => {
+    setisopen1(false);
+    setisopen2(false);
+    setisopen3(false);
+    setisopen4(false);
+    setisopen5(false);
+    setisopen6(false);
+    setisopen7(!isopen7);
+    setisopen8(false);
+  };
+  const opens8 = () => {
+    setisopen1(false);
+    setisopen2(false);
+    setisopen3(false);
+    setisopen4(false);
+    setisopen5(false);
+    setisopen6(false);
+    setisopen7(false);
+    setisopen8(!isopen8);
   };
 
   return (
@@ -135,6 +171,8 @@ function NavigationExample() {
               url: "#",
               excludePaths: ["#"],
               label: "Home",
+              selected: isopen7,
+              onClick: opens7,
               icon: HomeMinor,
             },
             {
@@ -311,7 +349,10 @@ function NavigationExample() {
               label: "Discounts",
               icon: DiscountsMajor,
               disabled: false,
+              selected: isopen8,
+              onClick: opens8,
             },
+
             // {
             //   url: "#",
             //   label: "Overflow item",
@@ -337,20 +378,38 @@ function NavigationExample() {
                 icon: ViewMinor,
               },
             },
-
             {
               url: "#",
               excludePaths: ["#"],
-              label: "Other secondary action",
-              // icon: ,
-              secondaryAction: {
-                url: "#",
-                accessibilityLabel: "View your online store",
+              icon: FaShopify,
+              label: "Point of Sale",
+              secondaryAction: {},
+            },
+          ]}
+          action={{
+            accessibilityLabel: "Add sales channel",
+            icon: ChevronRightMinor,
+            onClick: () => {},
+          }}
+          separator
+        />
 
-                tooltip: {
-                  content: "View your online store",
+        <Navigation.Section
+          title="Apps"
+          items={[
+            {
+              url: location,
+              disabled: false,
+              label: "Drafts",
+            },
+            {
+              subNavigationItems: [
+                {
+                  url: location,
+                  // disabled: false,
+                  label: "segments",
                 },
-              },
+              ],
             },
           ]}
           action={{
