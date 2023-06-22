@@ -48,7 +48,7 @@ import {
   ViewMinor,
 } from "@shopify/polaris-icons";
 import { FaShopify } from "react-icons/fa";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   ProductsMajor,
   CustomersMajor,
@@ -161,6 +161,9 @@ function NavigationExample() {
     setisopen7(false);
     setisopen8(!isopen8);
   };
+  useEffect(() => {
+    setisopen5(true);
+  }, []);
 
   return (
     <Frame>
@@ -373,7 +376,7 @@ function NavigationExample() {
               url: "#",
               excludePaths: ["#"],
               icon: StoreMajor,
-              label: "Icon as svg",
+              label: "Online Store",
               secondaryAction: {
                 icon: ViewMinor,
               },
@@ -398,18 +401,10 @@ function NavigationExample() {
           title="Apps"
           items={[
             {
+              icon: PlusMinor,
               url: location,
-              disabled: false,
-              label: "Drafts",
-            },
-            {
-              subNavigationItems: [
-                {
-                  url: location,
-                  // disabled: false,
-                  label: "segments",
-                },
-              ],
+              disabled: true,
+              label: "Add apps",
             },
           ]}
           action={{
